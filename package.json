@@ -1,4 +1,18 @@
 {
+  "lint-staged": {
+    "app/javascript/**/*.{js,jsx,json}": [
+      "prettier --write"
+    ],
+    "{package.json,.eslintrc.js,.prettierrc.js}": [
+      "prettier --write"
+    ],
+    "./**/*.rb": [
+      "bundle exec rubocop -a"
+    ],
+    "{Gemfile,Rakefile,config.ru}": [
+      "bundle exec rubocop -a"
+    ]
+  },
   "name": "bbrails",
   "private": true,
   "dependencies": {
@@ -11,6 +25,12 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "husky": "^7.0.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
     "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "prepare": "husky install"
   }
 }
