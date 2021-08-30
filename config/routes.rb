@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  defaults format: :json do
+    resources :tasks, except: %i[new edit], param: :slug
+    resources :users, only: :index
+  end
 
-  resources :tasks, except: %i[new edit], param: :slug
-  resources :users, only: :index
   root "home#index"
   get "*path", to: "home#index", via: :all
 end
