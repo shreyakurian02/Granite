@@ -10,7 +10,7 @@ module.exports = {
         "bb-purple": "#5469D4",
         "bb-env": "#F1F5F9",
         "bb-border": "#E4E4E7",
-        "bb-gray-700": "#37415",
+        "bb-gray-700": "#374151",
         "bb-gray-600": "#4B5563",
         "bb-red": "#F56565",
         "bb-green": "#31C48D",
