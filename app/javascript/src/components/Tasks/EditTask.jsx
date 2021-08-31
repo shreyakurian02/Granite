@@ -23,11 +23,11 @@ const EditTask = ({ history }) => {
         slug,
         payload: { task: { title, user_id: userId } }
       });
-      setLoading(false);
-      history.push("/dashboard");
+      history.push("/");
     } catch (error) {
-      setLoading(false);
       logger.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 

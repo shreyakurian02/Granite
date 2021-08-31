@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
 
   has_secure_password
+  has_secure_token :authentication_token
 
   validates :email, presence: true,
                       uniqueness: true,
@@ -13,6 +14,8 @@ class User < ApplicationRecord
                       format: { with: VALID_EMAIL_REGEX }
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true, on: :create
+
+  before_save :to_lowercase
 
   private
 
