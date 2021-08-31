@@ -96,9 +96,25 @@ yarn-debug.log*
 yarn-1.22.5.cjs
 yarn-1.22.5.js
 
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
+
+# Ignore node_modules in cypress folder
+cypress-tests/node_modules
+
+# Ignore package-lock.json in cypress folder
+cypress-tests/package-lock.json
+
+# Ignore all logfiles and tempfiles in cypress folder
+cypress-tests/cypress/results
+
+# Ignore IDE related files in cypress folder
+cypress-tests/.vscode
+
+# Ignore cypress screenshots and videos
+cypress-tests/cypress/artifacts/screenshots/
+cypress-tests/cypress/artifacts/videos/
+cypress-tests/cypress/screenshots/
+cypress-tests/cypress/videos/
+
+# Ignore test report folder
+/test/reports
+cypress-tests/debug.log
