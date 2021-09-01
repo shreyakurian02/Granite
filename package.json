@@ -1,10 +1,12 @@
 {
   "lint-staged": {
-    "app/javascript/**/*.{js,jsx,json}": [
-      "prettier --write"
+    "app/javascript/src/**/*.{js,jsx,json}": [
+      "prettier --write",
+      "git add"
     ],
     "{package.json,.eslintrc.js,.prettierrc.js}": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ],
     "./**/*.rb": [
       "bundle exec rubocop -a"
