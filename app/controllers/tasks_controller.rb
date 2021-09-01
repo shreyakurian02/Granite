@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task_creator = User.find(@task.user_id).name
+    @task_creator = User.find(@task.creator_id).name
   end
 
   def update
