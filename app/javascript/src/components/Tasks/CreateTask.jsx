@@ -37,7 +37,6 @@ const CreateTask = ({ history }) => {
   };
 
   useEffect(() => {
-    console.log("fetching");
     fetchUserDetails();
   }, []);
 

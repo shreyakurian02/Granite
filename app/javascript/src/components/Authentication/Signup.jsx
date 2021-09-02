@@ -13,10 +13,7 @@ const Signup = ({ history }) => {
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      console.log("1");
       setLoading(true);
-      console.log("2");
-      //const response = await authApi.login({ login: { email, password } });
       await authApi.signup({
         user: {
           name,
@@ -25,7 +22,7 @@ const Signup = ({ history }) => {
           password_confirmation: passwordConfirmation
         }
       });
-      console.log("3");
+
       setLoading(false);
       history.push("/");
     } catch (error) {

@@ -16,6 +16,16 @@ const ShowTask = () => {
 
   let history = useHistory();
 
+  const destroyTask = async () => {
+    try {
+      await tasksApi.destroy(task.slug);
+    } catch (error) {
+      logger.error(error);
+    } finally {
+      history.push("/");
+    }
+  };
+
   const updateTask = () => {
     history.push(`/tasks/${task.slug}/edit`);
   };
@@ -23,6 +33,7 @@ const ShowTask = () => {
   const fetchTaskDetails = async () => {
     try {
       const response = await tasksApi.show(slug);
+
       setTask(response.data.task);
     } catch (error) {
       logger.error(error);
@@ -61,6 +72,11 @@ const ShowTask = () => {
           {task?.title}
         </h1>
         <div className="bg-bb-env px-2 mt-2 mb-4 rounded">
+          <i
+            className="text-2xl text-center transition duration-300
+             ease-in-out ri-delete-bin-5-line hover:text-bb-red mr-2"
+            onClick={destroyTask}
+          ></i>
           <i
             className="text-2xl text-center transition duration-300
              ease-in-out ri-edit-line hover:text-bb-yellow"
