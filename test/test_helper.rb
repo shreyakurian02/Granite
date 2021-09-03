@@ -14,8 +14,6 @@ def enable_test_coverage
   end
 end
 
-enable_test_coverage if ENV["COVERAGE"]
-
 # Previous content of test helper as is
 
 ENV["RAILS_ENV"] ||= "test"
@@ -23,6 +21,9 @@ require_relative "../config/environment"
 require "rails/test_help"
 
 class ActiveSupport::TestCase
+  include ActionView::Helpers::TranslationHelper
+  include FactoryBot::Syntax::Methods
+
   # Run tests in parallel with specified workers
   # parallelize(workers: :number_of_processors)
   # Run tests in parallel with specified workers
