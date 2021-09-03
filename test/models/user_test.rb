@@ -78,7 +78,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_user_should_match_password_and_password_confirmation
-    @user.password_confirmation = ""
+    @user.password_confirmation = "#{@user.password}-random"
     assert_not @user.save
     assert_equal ["Password confirmation doesn't match Password"],
       @user.errors.full_messages
