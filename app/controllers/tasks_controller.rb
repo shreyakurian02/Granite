@@ -61,13 +61,13 @@ class TasksController < ApplicationController
       is_editing_restricted_params = Task::RESTRICTED_ATTRIBUTES.any? { |a| task_params.key?(a) }
       is_not_owner = @task.creator_id != @current_user.id
       if is_editing_restricted_params && is_not_owner
-        authorization_error
+        handle_unauthorized_user
       end
     end
 
     def load_task
       @task = Task.find_by_slug!(params[:slug])
     rescue ActiveRecord::RecordNotFound => errors
-      render json: { errors: errors }
+      render json: { errors: errors }, status: :not_found
     end
 end
