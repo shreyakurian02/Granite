@@ -1,4 +1,5 @@
 import React from "react";
+
 import { toast, Slide } from "react-toastify";
 
 const ToastrComponent = ({ type, message }) => {

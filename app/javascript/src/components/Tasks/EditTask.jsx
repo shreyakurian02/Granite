@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+
+import { useParams } from "react-router-dom";
+
 import tasksApi from "apis/tasks";
 import usersApi from "apis/users";
 import Container from "components/Container";
 import PageLoader from "components/PageLoader";
-import { useParams } from "react-router-dom";
 
 import TaskForm from "./Form/TaskForm";
 

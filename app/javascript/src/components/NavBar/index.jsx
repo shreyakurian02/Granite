@@ -1,8 +1,11 @@
 import React from "react";
-import NavItem from "./NavItem";
-import authApi from "apis/auth";
-import { resetAuthTokens } from "src/apis/axios";
+
 import { getFromLocalStorage, setToLocalStorage } from "helpers/storage";
+import { resetAuthTokens } from "src/apis/axios";
+
+import authApi from "apis/auth";
+
+import NavItem from "./NavItem";
 
 const NavBar = () => {
   const userName = getFromLocalStorage("authUserName");

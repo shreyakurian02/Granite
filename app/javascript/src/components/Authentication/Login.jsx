@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-import LoginForm from "components/Authentication/Form/LoginForm";
+import { setToLocalStorage } from "helpers/storage";
+
 import authApi from "apis/auth";
 import { setAuthHeaders } from "apis/axios";
-import { setToLocalStorage } from "helpers/storage";
+import LoginForm from "components/Authentication/Form/LoginForm";
 
 const Login = () => {
   const [email, setEmail] = useState("");

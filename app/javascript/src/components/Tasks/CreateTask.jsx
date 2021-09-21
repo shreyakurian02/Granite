@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Container from "components/Container";
-import TaskForm from "./Form/TaskForm";
-import PageLoader from "components/PageLoader";
+
 import tasksApi from "apis/tasks";
 import usersApi from "apis/users";
+import Container from "components/Container";
+import PageLoader from "components/PageLoader";
+
+import TaskForm from "./Form/TaskForm";
 
 const CreateTask = ({ history }) => {
   const [title, setTitle] = useState("");

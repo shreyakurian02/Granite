@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 import { useParams, useHistory } from "react-router-dom";
 
-import tasksApi from "apis/tasks";
 import commentsApi from "apis/comments";
+import tasksApi from "apis/tasks";
+import Comments from "components/Comments";
 import Container from "components/Container";
 import PageLoader from "components/PageLoader";
-import Comments from "components/Comments";
 
 const ShowTask = () => {
   const { slug } = useParams();

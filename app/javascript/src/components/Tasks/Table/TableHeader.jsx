@@ -1,4 +1,5 @@
 import React from "react";
+
 import { compose, head, join, juxt, tail, toUpper } from "ramda";
 
 const TableHeader = ({ type }) => {

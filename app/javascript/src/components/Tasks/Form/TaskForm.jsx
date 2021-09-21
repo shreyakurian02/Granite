@@ -1,7 +1,9 @@
 import React from "react";
+
+import Select from "react-select";
+
 import Button from "components/Button";
 import Input from "components/Input";
-import Select from "react-select";
 
 const TaskForm = ({
   type = "create",
