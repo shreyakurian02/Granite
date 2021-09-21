@@ -48,7 +48,6 @@ group :development do
   gem "spring"
   gem "rubocop"
   gem "rubocop-rails"
-  gem "sidekiq"
 
 end
 
@@ -61,3 +60,4 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "react-rails"
 gem "simplecov", require: false, group: :test
+gem "sidekiq"
