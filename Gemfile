@@ -48,6 +48,7 @@ group :development do
   gem "spring"
   gem "rubocop"
   gem "rubocop-rails"
+  gem "sidekiq"
 
 end
 

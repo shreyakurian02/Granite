@@ -10,6 +10,7 @@ class Task < ApplicationRecord
   before_create :set_slug
   has_many :comments, dependent: :destroy
   enum status: { unstarred: 0, starred: 1 }
+  after_create :log_task_details
 
   private
 
@@ -44,5 +45,9 @@ class Task < ApplicationRecord
       if slug_changed? && self.persisted?
         errors.add(:slug, t("task.slug.immutable"))
       end
+    end
+
+    def log_task_details
+      TaskLoggerJob.perform_later(self)
     end
 end
