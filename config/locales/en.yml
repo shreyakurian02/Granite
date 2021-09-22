@@ -32,10 +32,18 @@
 en:
   hello: "Hello world"
   successfully_created: "%{entity} was successfully created!"
+  successfully_updated: "%{entity} was successfully updated!"
+  not_found: "%{entity} not found."
   task:
-    not_found: "Couldn't find Task"
     slug:
       immutable: "is immutable!"
+  preference:
+    notification_delivery_hour:
+      range: "value should be between 0 and 23"
+
+  date:
+    invalid: "must be a valid date"
+    cant_be_in_past: "can't be in the past"
   session:
     could_not_auth: "Could not authenticate with the provided credentials."
     incorrect_credentials: "Incorrect credentials, try again."

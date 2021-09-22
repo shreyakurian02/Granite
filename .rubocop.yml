@@ -497,7 +497,7 @@ Lint/BooleanSymbol:
 Rails:
   Enabled: false
 
-# Correct usage of Date methods in Rails. Use Time.zone.today over Date.today
+# Correct usage of Date methods in Rails. Use Time.zone.today over Time.zone.today
 Rails/Date:
   Enabled: true
 

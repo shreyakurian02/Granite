@@ -98,6 +98,6 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     invalid_slug = "invalid-slug"
     get task_path(invalid_slug), headers: @creator_headers
     assert_response :not_found
-    assert_equal response.parsed_body["errors"], t("task.not_found")
+    assert_equal response.parsed_body["error"], t("not_found", entity: "Task")
   end
 end
