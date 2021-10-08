@@ -28,9 +28,10 @@ class Task < ApplicationRecord
 
     def set_slug
       title_slug = title.parameterize
+      regex_pattern = "slug #{Constants::DB_REGEX_OPERATOR} ?"
       latest_task_slug = Task.where(
-        "slug REGEXP ?",
-        "#{title_slug}$|#{title_slug}-[0-9]+$",
+        regex_pattern,
+        "#{title_slug}$|#{title_slug}-[0-9]+$"
       ).order(slug: :desc).first&.slug
       slug_count = 0
       if latest_task_slug.present?
