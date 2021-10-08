@@ -23,7 +23,7 @@ const PreferenceForm = ({
     return setNotificationDeliveryHour(deliveryHour);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = event => {
     event.preventDefault();
     updatePreference();
   };

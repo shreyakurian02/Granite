@@ -3,6 +3,7 @@
 class TasksController < ApplicationController
   after_action :verify_authorized, except: :index
   after_action :verify_policy_scoped, only: :index
+
   before_action :authenticate_user_using_x_auth_token, except: [:new, :edit]
   before_action :load_task, only: %i[show update destroy]
   before_action :ensure_authorized_update_to_restricted_attrs, only: %i[update]
@@ -68,9 +69,6 @@ class TasksController < ApplicationController
     def load_task
       @task = Task.find_by_slug!(params[:slug])
       rescue ActiveRecord::RecordNotFound => errors
-        # unless @task
-        # render json: { errors: errors }, status: :not_found
         render status: :not_found, json: { error: t("not_found", entity: "Task") }
-      # render status: :not_found, json: { error: t("not_found", entity: "Task") }
     end
 end

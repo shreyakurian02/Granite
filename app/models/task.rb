@@ -10,6 +10,7 @@ class Task < ApplicationRecord
   before_create :set_slug
   has_many :comments, dependent: :destroy
   enum status: { unstarred: 0, starred: 1 }
+  after_create :log_task_details
   after_commit :log_task_details, on: :create
 
   private
